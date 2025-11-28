@@ -11,7 +11,7 @@ const images = [g1, g2, g3, g4, g5, g6];
 
 export default function Gallery() {
   return (
-    <section id="projects" className="py-14 bg-gray-100 scroll-mt-24">
+    <section id="projects" className="py-14 bg-gray-100 scroll-mt-18">
       
       <motion.h2
         initial={{ opacity: 0, y: 40 }}

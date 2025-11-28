@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-white scroll-mt-24">
+    <section id="contact" className="py-20 bg-white scroll-mt-14">
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

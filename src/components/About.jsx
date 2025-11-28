@@ -3,7 +3,7 @@ import aboutImg from "../assets/aboutImg.jpg";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-100 scroll-mt-24">
+    <section id="about" className="py-20 bg-gray-100 scroll-mt-14">
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
