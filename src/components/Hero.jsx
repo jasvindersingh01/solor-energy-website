@@ -1,31 +1,50 @@
-import HeroImg from "../assets/HeroImg1.jpg";
+import { motion } from "framer-motion";
+import heroImg from "../assets/heroimg2.jpg";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-[90vh] bg-cover bg-center text-white flex items-center px-8 scroll-mt-30"
-      style={{ backgroundImage: `url(${HeroImg})` }}
+      className="relative h-screen flex items-center justify-center"
     >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+     
+      <div
+        className="absolute inset-0 bg-cover"
+        style={{ backgroundImage: `url(${heroImg})` }}
+      ></div>
 
-      {/* Content */}
-      <div className="relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
-          Clean Solar Energy
+      <div className="absolute inset-0 bg-black/20"></div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 text-center max-w-3xl px-4"
+      >
+        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight pt-24">
+          Switch to{" "}
+          <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+            Solar
+          </span>{" "}
+          & Save Big with{" "}
+          <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">
+            Govt Subsidy
+          </span>
         </h1>
 
-        <p className="mt-4 text-lg md:text-xl drop-shadow">
-          Save money • Go green • Get Govt Subsidy up to ₹78,000
+        <p className="text-gray-200 mt-6 text-lg md:text-xl">
+         Reliable rooftop solar systems designed 
+          <br />
+         for maximum efficiency and long-term savings.
         </p>
 
-        <a href="#contact">
-          <button className="mt-6 px-6 py-3 bg-yellow-500 rounded shadow text-black font-semibold">
-            Get Free Quote
-          </button>
+        <a
+          href="#contact"
+          className="mt-8 inline-block bg-yellow-400 px-8 py-3 rounded-md text-lg font-semibold text-black hover:bg-yellow-500 shadow-lg transition"
+        >
+          Get A Quote
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }
