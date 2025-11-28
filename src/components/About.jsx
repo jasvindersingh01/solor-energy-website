@@ -38,7 +38,7 @@ export default function About() {
           className="space-y-5"
         >
           <p className="text-lg text-gray-700 leading-relaxed">
-            <strong>Our Solar Energies</strong> is a trusted solar solutions provider in Kota,
+            <strong>Aster's Energy</strong> is a trusted solar solutions provider in Kota,
             offering on-grid, off-grid and hybrid rooftop solar systems along with water heaters
             and subsidy support. With certified engineers and years of installation experience,
             we ensure reliable service, high-efficiency solar panels, smooth installation

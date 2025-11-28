@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-blue-900 text-white py-6 mt-16">
       <div className="max-w-6xl mx-auto text-center px-4">
         <h3 className="text-xl font-semibold mb-2">
-          Our Solar Energies
+          Aster's Energy
         </h3>
         <p className="text-gray-300 text-sm">
           Plot No. 1, Adinath Nagar, Devli Arab Road, Kota, Rajasthan

@@ -28,7 +28,7 @@ export default function Navbar() {
  
         <div className="flex items-center gap-2">
           <img src={Logo} className="w-22 h-22 object-contain" />
-          <span className="text-xl font-bold text-blue-700">Our Solar Energies</span>
+          <span className="text-xl font-bold text-blue-700">Aster's Energy</span>
         </div>
 
         <div className="hidden md:flex items-center gap-10 font-medium text-gray-700">
