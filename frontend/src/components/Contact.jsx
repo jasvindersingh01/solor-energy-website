@@ -1,7 +1,47 @@
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
+import React, { useState } from "react";
 
 export default function Contact() {
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Form Submitted Successfully!");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        alert("Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Server error! Please try again later.");
+    }
+  };
+
+
   return (
     <section id="contact" className="py-20 bg-white scroll-mt-14">
       <motion.h2
@@ -62,6 +102,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.form
+        onSubmit={handleSubmit}
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -70,12 +111,17 @@ export default function Contact() {
         >
           <input
             type="text"
+            name="name"
             placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
           />
 
           <input
             type="text"
+            name="phone"
             placeholder="Phone Number"
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
           />
