@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Contact() {
 
@@ -30,14 +31,24 @@ export default function Contact() {
       const result = await response.json();
 
       if (result.success) {
-        alert("Form Submitted Successfully!");
+        Swal.fire({
+          title: "Message Sent!",
+          icon: "success",
+          text: "We will contact you soon.",
+          draggable: true
+        });
+
         setFormData({ name: "", phone: "", email: "", message: "" });
       } else {
         alert("Something went wrong!");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Server error! Please try again later.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
     }
   };
 
@@ -102,7 +113,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.form
-        onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -123,7 +134,7 @@ export default function Contact() {
             type="text"
             name="phone"
             placeholder="Phone Number"
-             value={formData.phone}
+            value={formData.phone}
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
@@ -133,17 +144,17 @@ export default function Contact() {
             type="email"
             name="email"
             placeholder="Email Address"
-             value={formData.email}
+            value={formData.email}
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
           />
 
           <textarea
-          name="message"
+            name="message"
             rows="4"
             placeholder="How can we help you?"
-             value={formData.message}
+            value={formData.message}
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
