@@ -123,18 +123,29 @@ export default function Contact() {
             type="text"
             name="phone"
             placeholder="Phone Number"
+             value={formData.phone}
+            onChange={handleChange}
+            required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
           />
 
           <input
             type="email"
+            name="email"
             placeholder="Email Address"
+             value={formData.email}
+            onChange={handleChange}
+            required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
           />
 
           <textarea
+          name="message"
             rows="4"
             placeholder="How can we help you?"
+             value={formData.message}
+            onChange={handleChange}
+            required
             className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
           ></textarea>
 
