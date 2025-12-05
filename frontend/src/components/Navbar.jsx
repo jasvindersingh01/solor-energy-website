@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import Logo from "../assets/Logo.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,16 +25,18 @@ export default function Navbar() {
         ${scrolled ? "bg-white shadow-md" : "bg-white/90 backdrop-blur-md"}
       `}
     >
-      <nav className="max-w-7xl mx-auto flex justify-between items-center px-6">
- 
+      <nav className="flex justify-between items-center px-6 pt-[32px]">
+
         <div className="flex items-center gap-2">
           <img src={Logo} className="w-22 h-22 object-contain" />
           <span className="text-xl font-bold text-blue-700">Aster's Energy</span>
         </div>
 
         <div className="hidden md:flex items-center gap-10 font-medium text-gray-700">
-          <a href="#home" className="hover:text-blue-400">Home</a>
-          <a href="#services" className="hover:text-blue-400">Services</a>
+           <Link to="/">Home</Link> 
+          <Link to="/services" className="hover:text-yellow-500">
+            Services
+          </Link>
           <a href="#projects" className="hover:text-blue-400">Projects</a>
           <a href="#about" className="hover:text-blue-400">About Us</a>
           <a href="#contact" className="hover:text-blue-400">Contact</a>

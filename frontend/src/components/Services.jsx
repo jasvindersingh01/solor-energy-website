@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaSolarPanel,
   FaBolt,
@@ -66,7 +67,7 @@ export default function Services() {
         Our Services
       </motion.h2>
 
-      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
         {services.map((service, i) => (
           <motion.div
             key={i}
@@ -77,7 +78,6 @@ export default function Services() {
             className="bg-white rounded-xl shadow-lg hover:shadow-2xl overflow-hidden
                        transition-all duration-300 hover:-translate-y-2 border"
           >
-            {/* Top Image */}
             <img
               src={service.image}
               alt={service.title}
@@ -97,6 +97,14 @@ export default function Services() {
             </div>
           </motion.div>
         ))}
+      </div>
+      <div className="flex justify-center mt-10">
+       <Link
+  to="/services"
+  className="mt-6 inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
+>
+  View Full Services →
+</Link>
       </div>
     </section>
   );

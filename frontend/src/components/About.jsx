@@ -15,7 +15,7 @@ export default function About() {
         About Us
       </motion.h2>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
 
         <motion.div
           initial={{ opacity: 0, x: -40 }}

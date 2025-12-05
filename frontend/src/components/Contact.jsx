@@ -71,7 +71,7 @@
           Contact Us
         </motion.h2>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-start">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-start">
 
           <motion.div
             initial={{ opacity: 0, x: -40 }}

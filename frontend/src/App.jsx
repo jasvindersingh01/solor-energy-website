@@ -1,28 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Gallery from "./components/Gallery";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { useEffect } from "react";
+
+import Home from "./pages/Home";
+import ServicesPage from "./pages/ServicesPage";
 
 export default function App() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Services />
-      <WhyChooseUs />
-      <Gallery />
-      <About />
-      <Contact />
+    <div className="pt-[45px]">
+      <TopBar />
+      </div>
+      <div className="mt-10">
+  <Navbar />
+</div>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicesPage />} />
+      </Routes>
+
       <Footer />
     </>
   );

@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
       </motion.h2>
 
       {/* Feature Cards */}
-      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
         {features.map((item, i) => (
           <motion.div
             key={i}
