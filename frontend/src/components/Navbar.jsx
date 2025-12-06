@@ -60,12 +60,12 @@ useEffect(() => {
           <Link to="/contact" className="hover:text-blue-400">
             Contact
           </Link>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="bg-yellow-400 px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition"
           >
             Get A Quote
-          </a>
+          </Link>
         </div>
 
         <button

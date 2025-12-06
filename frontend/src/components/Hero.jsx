@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import heroImg from "../assets/heroimg2.jpg";
+import { Link } from "react-router-dom";
+
 
 export default function Hero() {
   return (
@@ -38,12 +40,12 @@ export default function Hero() {
          for maximum efficiency and long-term savings.
         </p>
 
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="mt-8 inline-block bg-yellow-400 px-8 py-3 rounded-md text-lg font-semibold text-black hover:bg-yellow-500 shadow-lg transition"
         >
           Get A Quote
-        </a>
+        </Link>
       </motion.div>
     </section>
   );
