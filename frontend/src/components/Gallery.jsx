@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import g1 from "../assets/gallery/g1.jpg";
 import g2 from "../assets/gallery/g2.jpg";
 import g3 from "../assets/gallery/g3.avif";
-import g4 from "../assets/gallery/g4.jpg";
-import g5 from "../assets/gallery/g5.jpg";
-import g6 from "../assets/gallery/g6.avif";
 
-const images = [g1, g2, g3, g4, g5, g6];
+const images = [g1, g2, g3];
 
 export default function Gallery() {
   return (
     <section id="projects" className="py-14 bg-gray-100 scroll-mt-18">
-      
+
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -46,11 +44,20 @@ export default function Gallery() {
           >
             <img
               src={img}
-              className="w-full h-48 md:h-56 object-cover hover:scale-110 transition duration-500"
+              className="w-full h-48 md:h-65 object-cover hover:scale-110 transition duration-500"
             />
           </motion.div>
         ))}
       </div>
+      <div className="text-center mt-10">
+        <Link
+          to="/projects"
+          className="px-6 py-3 bg-blue-700 text-white rounded-md font-semibold hover:bg-blue-800 transition"
+        >
+          View All Projects
+        </Link>
+      </div>
+
     </section>
   );
 }

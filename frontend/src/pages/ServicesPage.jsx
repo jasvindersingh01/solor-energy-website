@@ -1,4 +1,4 @@
-import React from "react";
+import { motion } from "framer-motion";
 import ongrid from "../assets/services/ongrid.webp";
 import offgrid from "../assets/services/offgrid.avif";
 import hybrid from "../assets/services/hybrid.webp";
@@ -55,7 +55,7 @@ export default function ServicesPage() {
 
   return (
     <>
-      <div className="w-full h-[25vh] md:h-[45vh] relative">
+      <div className="w-full h-[25vh] md:h-[40vh] relative">
         <img
           src={banner}
           alt="Solar Banner"
@@ -63,7 +63,7 @@ export default function ServicesPage() {
         />
         <div className="absolute inset-0 bg-black/40"></div>
         
-        <div className="absolute inset-0 flex items-center justify-center pt-">
+        <div className="absolute inset-0 flex items-center justify-start pl-20 pt-6">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
             Our Solar Services
           </h1>

@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center"
+      className="relative h-[89vh] flex items-center justify-center"
     >
      
       <div
@@ -32,7 +32,7 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="text-gray-200 mt-6 text-lg md:text-xl">
+        <p className="text-gray-200 mt-6 text-lg md:text-2xl">
          Reliable rooftop solar systems designed 
           <br />
          for maximum efficiency and long-term savings.

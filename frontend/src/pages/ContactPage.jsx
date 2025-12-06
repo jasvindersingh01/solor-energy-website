@@ -2,6 +2,7 @@
   import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
   import React, { useState } from "react";
   import Swal from "sweetalert2";
+  import banner from "../assets/banners/banner2.jpg"
 
   export default function Contact() {
 
@@ -60,6 +61,20 @@
 
 
     return (
+      <><div className="w-full h-[25vh] md:h-[40vh] relative">
+                  <img
+                      src={banner}
+                      alt="Solar Banner"
+                      className="w-full h-full object-cover object-center opacity-90"
+                  />
+                  <div className="absolute inset-0 bg-black/40"></div>
+      
+                  <div className="absolute inset-0 flex items-center justify-start pl-20 pt-6">
+                      <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
+                          Contact Us
+                      </h1>
+                  </div>
+              </div>
       <section id="contact" className="py-20 bg-white scroll-mt-14">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -186,5 +201,6 @@
           </motion.form>
         </div>
       </section>
+      </>
     );
   }

@@ -84,7 +84,6 @@ export default function Services() {
               className="w-full h-40 object-cover"
             />
 
-            {/* Content */}
             <div className="p-5">
               <div className="flex items-center gap-3 mb-2">
                 {service.icon}

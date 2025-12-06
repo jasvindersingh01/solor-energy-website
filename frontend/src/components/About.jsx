@@ -1,79 +1,44 @@
 import { motion } from "framer-motion";
 import aboutImg from "../assets/aboutImg.jpg";
+import { Link } from "react-router-dom";
 
-export default function About() {
+export default function AboutPreview() {
   return (
-    <section id="about" className="py-20 bg-gray-100 scroll-mt-14">
+    <section id="about" className="py-16 bg-gray-100 scroll-mt-14">
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="text-4xl font-bold text-center text-blue-700 mb-12"
+        transition={{ duration: 0.6 }}
+        className="text-4xl font-bold text-center text-blue-700 mb-8"
       >
         About Us
       </motion.h2>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="max-w-3xl mx-auto text-center px-6 space-y-6"
+      >
+        <p className="text-gray-700 leading-relaxed text-lg">
+          Aster's Energy delivers high-efficiency rooftop solar solutions for
+          homes & businesses across Kota. With certified engineers and reliable
+          installation processes, we help you save big on electricity bills with
+          clean, renewable energy.
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <img
-            src={aboutImg}
-            alt="About Our Solar Energies"
-            className="rounded-xl shadow-lg w-full object-cover"
-          />
-        </motion.div>
+        <Link
+  to="/about"
+  className="text-blue-700 font-semibold hover:underline hover:text-blue-900 transition"
+>
+  Learn More →
+</Link>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="space-y-5"
-        >
-          <p className="text-lg text-gray-700 leading-relaxed">
-            <strong>Aster's Energy</strong> is a trusted solar solutions provider in Kota,
-            offering on-grid, off-grid and hybrid rooftop solar systems along with water heaters
-            and subsidy support. With certified engineers and years of installation experience,
-            we ensure reliable service, high-efficiency solar panels, smooth installation
-            and long-term customer support. We proudly deal in leading brands such as
-            <strong>Waaree, Luminous, UTL, Adani, Vikram Solar</strong> and
-            <strong> Tata Power Solar</strong>, delivering durable and cost-effective solar
-            solutions for homes and businesses.
-          </p>
+      </motion.div>
 
-          <div className="grid grid-cols-2 gap-4 pt-3">
-
-            <div className="bg-white p-4 rounded-lg shadow text-center border">
-              <h4 className="text-xl font-semibold text-blue-600">500+ </h4>
-              <p className="text-gray-600 text-sm">Installations</p>
-            </div>
-
-            <div className="bg-white p-4 rounded-lg shadow text-center border">
-              <h4 className="text-xl font-semibold text-blue-600">10+ Years</h4>
-              <p className="text-gray-600 text-sm">Experience</p>
-            </div>
-
-            <div className="bg-white p-4 rounded-lg shadow text-center border">
-              <h4 className="text-xl font-semibold text-blue-600">80%+</h4>
-              <p className="text-gray-600 text-sm">Electricity Savings</p>
-            </div>
-
-            <div className="bg-white p-4 rounded-lg shadow text-center border">
-              <h4 className="text-xl font-semibold text-blue-600">100% </h4>
-              <p className="text-gray-600 text-sm">Govt Subsidy Support</p>
-            </div>
-
-          </div>
-        </motion.div>
-
-      </div>
     </section>
   );
 }

@@ -4,7 +4,6 @@ import Services from "../components/Services";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Gallery from "../components/Gallery";
 import About from "../components/About";
-import Contact from "../components/Contact";
 
 export default function Home() {
   useEffect(() => {
@@ -14,11 +13,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <About />
       <Services />
       <WhyChooseUs />
       <Gallery />
-      <About />
-      <Contact />
     </>
   );
 }
