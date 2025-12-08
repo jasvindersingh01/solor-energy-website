@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/logo.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -9,15 +9,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hideTopbar, setHideTopbar] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 50) setHideTopbar(true);
-    else setHideTopbar(false);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) setHideTopbar(true);
+      else setHideTopbar(false);
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
 
   useEffect(() => {
@@ -33,7 +33,7 @@ useEffect(() => {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-     className={`fixed w-full z-50 transition-all duration-300
+      className={`fixed w-full z-50 transition-all duration-300
         ${hideTopbar ? "top-0" : "top-[35px]"}
         ${scrolled ? "bg-white shadow-md" : "bg-white/90 backdrop-blur-md"}
       `}
@@ -47,7 +47,7 @@ useEffect(() => {
         </div>
 
         <div className="hidden md:flex items-center gap-10 font-medium text-gray-700">
-           <Link to="/" className="hover:text-blue-400">Home</Link> 
+          <Link to="/" className="hover:text-blue-400">Home</Link>
           <Link to="/services" className="hover:text-blue-400">
             Services
           </Link>
@@ -79,20 +79,39 @@ useEffect(() => {
       {open && (
         <div className="md:hidden bg-white shadow-md">
           <div className="flex flex-col gap-4 px-6 py-4 text-gray-700 font-medium">
-            <a href="#home" onClick={() => setOpen(false)}>Home</a>
-            <a href="#services" onClick={() => setOpen(false)}>Services</a>
-            <a href="#about" onClick={() => setOpen(false)}>About Us</a>
-            <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
 
-            <a
-              href="#contact"
-              className="bg-yellow-400 text-center px-4 py-2 rounded-md font-semibold"
+            <Link to="/" onClick={() => setOpen(false)} className="hover:text-blue-400">
+              Home
+            </Link>
+
+            <Link to="/services" onClick={() => setOpen(false)} className="hover:text-blue-400">
+              Services
+            </Link>
+
+            <Link to="/projects" onClick={() => setOpen(false)} className="hover:text-blue-400">
+              Projects
+            </Link>
+
+            <Link to="/about" onClick={() => setOpen(false)} className="hover:text-blue-400">
+              About Us
+            </Link>
+
+            <Link to="/contact" onClick={() => setOpen(false)} className="hover:text-blue-400">
+              Contact
+            </Link>
+
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="bg-yellow-400 text-center px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition"
             >
               Get A Quote
-            </a>
+            </Link>
+
           </div>
         </div>
       )}
+
     </motion.header>
   );
 }
