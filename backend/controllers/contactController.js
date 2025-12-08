@@ -5,11 +5,9 @@ exports.submitForm = async (req, res) => {
   try {
     const { name, phone, email, message } = req.body;
 
-    // Save to MongoDB
     const newLead = new Contact({ name, phone, email, message });
     await newLead.save();
 
-    // Send Email Notification
     await sendNotificationEmail(name, phone, email, message);
 
     return res.status(201).json({

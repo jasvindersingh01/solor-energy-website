@@ -1,17 +1,19 @@
 const nodemailer = require("nodemailer");
 
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,      // smtp-relay.brevo.com
+  port: process.env.SMTP_PORT,      // 587
+  secure: false,                    // Brevo → false
+  auth: {
+    user: process.env.SMTP_USER,    // your Brevo login (API SMTP email)
+    pass: process.env.SMTP_PASS,    // SMTP Key
+  }
+});
+
 const sendNotificationEmail = async (name, phone, email, message) => {
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
-
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.SMTP_USER,
       to: process.env.EMAIL_TO,
       subject: "New Contact Form Submission - Aster Energy",
       html: `
@@ -21,15 +23,14 @@ const sendNotificationEmail = async (name, phone, email, message) => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
         <br/>
-        <p>This email was automatically triggered by your website's contact form.</p>
-      `
+        <p>This email was automatically sent via Brevo SMTP.</p>
+      `,
     };
 
     await transporter.sendMail(mailOptions);
-    console.log("📨 Email Notification Sent");
-
+    console.log("Email Sent Successfully");
   } catch (error) {
-    console.log("Email Error:", error);
+    console.error("Email error:", error);
   }
 };
 
