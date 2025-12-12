@@ -81,7 +81,7 @@ export default function ServicesPage() {
               key={i}
               className="bg-white rounded-xl shadow-lg border overflow-hidden"
             >
-              <img src={s.image} className="w-full h-56 object-cover" />
+              <img src={s.image} className="w-full h-80 object-cover" />
 
               <div className="p-6">
                 <h2 className="text-2xl font-semibold mb-2">{s.title}</h2>

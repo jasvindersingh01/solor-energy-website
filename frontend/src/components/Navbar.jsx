@@ -34,7 +34,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
       className={`fixed w-full z-50 transition-all duration-300
-        ${hideTopbar ? "top-0" : "top-[35px]"}
+      ${hideTopbar ? "top-0" : "md:top-[35px] top-0"}
         ${scrolled ? "bg-white shadow-md" : "bg-white/90 backdrop-blur-md"}
       `}
 
