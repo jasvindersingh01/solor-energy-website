@@ -1,17 +1,17 @@
-import { 
-  FaFacebookF, 
-  FaInstagram, 
-  FaWhatsapp, 
-  FaYoutube, 
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
   FaMapMarkerAlt,
   FaPhoneAlt,
-  FaEnvelope 
+  FaEnvelope
 } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-blue-900 text-white pt-16 pb-8 mt-20">
-      
+
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
 
         <div>

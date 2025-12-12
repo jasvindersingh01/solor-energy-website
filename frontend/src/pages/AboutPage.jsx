@@ -90,6 +90,83 @@ export default function AboutPage() {
 
                 </div>
             </section>
+            {/* WHY CHOOSE US SECTION */}
+            <section className="mt-16">
+                <h2 className="text-3xl font-bold text-center text-blue-900 mb-10">
+                    Why Choose Aster's Energy?
+                </h2>
+
+                <div className="grid md:grid-cols-4 grid-cols-1 gap-6 max-w-6xl mx-auto px-6">
+
+                    {/* Card 1 */}
+                    <div className="bg-white shadow-lg rounded-xl p-6 text-center border hover:shadow-xl transition">
+                        <div className="text-blue-900 text-4xl mb-3">⚡</div>
+                        <h3 className="text-xl font-semibold mb-2">High Efficiency Panels</h3>
+                        <p className="text-gray-600">
+                            We use top-quality solar panels offering maximum power output.
+                        </p>
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="bg-white shadow-lg rounded-xl p-6 text-center border hover:shadow-xl transition">
+                        <div className="text-blue-900 text-4xl mb-3">👷‍♂️</div>
+                        <h3 className="text-xl font-semibold mb-2">Certified Engineers</h3>
+                        <p className="text-gray-600">
+                            Our trained and certified team ensures smooth and safe installation.
+                        </p>
+                    </div>
+
+                    {/* Card 3 */}
+                    <div className="bg-white shadow-lg rounded-xl p-6 text-center border hover:shadow-xl transition">
+                        <div className="text-blue-900 text-4xl mb-3">⚙️</div>
+                        <h3 className="text-xl font-semibold mb-2">Fast & Hassle-Free Service</h3>
+                        <p className="text-gray-600">
+                            Quick installation with long-term support for maintenance and service.
+                        </p>
+                    </div>
+
+                    {/* Card 4 */}
+                    <div className="bg-white shadow-lg rounded-xl p-6 text-center border hover:shadow-xl transition">
+                        <div className="text-blue-900 text-4xl mb-3">🏦</div>
+                        <h3 className="text-xl font-semibold mb-2">Govt Subsidy Assistance</h3>
+                        <p className="text-gray-600">
+                            We help you easily apply and claim government subsidies.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            {/* MISSION & VISION */}
+            <section className="mt-20 max-w-6xl mx-auto px-6">
+
+                <h2 className="text-3xl font-bold text-center text-blue-900 mb-10">
+                    Our Mission & Vision
+                </h2>
+
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
+
+                    {/* Mission */}
+                    <div className="bg-white border shadow-md rounded-xl p-8 hover:shadow-lg transition">
+                        <h3 className="text-2xl font-semibold text-blue-900 mb-3">Our Mission</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                            To make clean and affordable solar energy accessible to every home
+                            and business in Rajasthan by delivering reliable, efficient and
+                            cost-effective solar solutions.
+                        </p>
+                    </div>
+
+                    {/* Vision */}
+                    <div className="bg-white border shadow-md rounded-xl p-8 hover:shadow-lg transition">
+                        <h3 className="text-2xl font-semibold text-blue-900 mb-3">Our Vision</h3>
+                        <p className="text-gray-700 leading-relaxed">
+                            To become the most trusted solar energy provider in India by
+                            promoting sustainable living and empowering communities through
+                            renewable energy adoption.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
         </>
     );
 }
