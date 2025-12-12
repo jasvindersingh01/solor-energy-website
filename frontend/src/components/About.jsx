@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function AboutPreview() {
   return (
-    <section id="about" className="py-16 bg-gray-100 scroll-mt-14">
+    <section id="about" className="py-16  scroll-mt-14">
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}

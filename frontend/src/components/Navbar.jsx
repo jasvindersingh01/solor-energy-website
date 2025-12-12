@@ -100,13 +100,13 @@ export default function Navbar() {
               Contact
             </Link>
 
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="bg-yellow-400 text-center px-4 py-2 rounded-md font-semibold hover:bg-yellow-500 transition"
+            <a
+              href="tel:9351055571"
+              className="mt-2 inline-block w-max px-4 py-2 bg-yellow-400 text-white rounded-md hover:bg-red-700 transition"
+              onClick={() => setIsOpen(false)}
             >
-              Get A Quote
-            </Link>
+              Call Now
+            </a>
 
           </div>
         </div>
