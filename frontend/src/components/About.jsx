@@ -28,7 +28,7 @@ export default function AboutPreview() {
           <img
             src={aboutImg}
             alt="About Solar"
-            className="rounded-2xl shadow-lg w-full h-[50vh] object-cover object-bottom"
+            className=" shadow-lg w-full h-[60vh] object-cover object-bottom"
           />
         </motion.div>
 

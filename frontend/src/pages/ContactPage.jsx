@@ -69,7 +69,7 @@
                   />
                   <div className="absolute inset-0 bg-black/40"></div>
       
-                  <div className="absolute inset-0 flex items-center justify-start pl-20 pt-6">
+                  <div className="absolute inset-0 flex items-center justify-center pt-6">
                       <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
                           Contact Us
                       </h1>

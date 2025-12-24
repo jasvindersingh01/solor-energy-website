@@ -12,7 +12,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-black/40"></div>
 
-            <div className="absolute inset-0 flex items-center justify-start pl-20 pt-6">
+            <div className="absolute inset-0 flex items-center justify-center pt-6">
                 <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
                     About Us
                 </h1>
@@ -41,7 +41,7 @@ export default function AboutPage() {
                         <img
                             src={aboutImg}
                             alt="About Our Solar Energies"
-                            className="rounded-xl shadow-lg w-full object-cover"
+                            className="rounded-xl shadow-lg w-full h-[500px] object-cover"
                         />
                     </motion.div>
 
@@ -57,8 +57,8 @@ export default function AboutPage() {
                             offering on-grid, off-grid and hybrid rooftop solar systems along with water heaters
                             and subsidy support. With certified engineers and years of installation experience,
                             we ensure reliable service, high-efficiency solar panels, smooth installation
-                            and long-term customer support. We proudly deal in leading brands such as
-                            <strong>Waaree, Luminous, UTL, Adani, Vikram Solar</strong> and
+                            and long-term customer support. We proudly deal in leading brands such as 
+                            <strong> Waaree, Luminous, UTL, Adani, Vikram Solar</strong> and
                             <strong> Tata Power Solar</strong>, delivering durable and cost-effective solar
                             solutions for homes and businesses.
                         </p>
@@ -96,7 +96,7 @@ export default function AboutPage() {
                     Why Choose Aster's Energy?
                 </h2>
 
-                <div className="grid md:grid-cols-4 grid-cols-1 gap-6 max-w-6xl mx-auto px-6">
+                <div className="grid md:grid-cols-4 grid-cols-1 gap-6 max-w-7xl mx-auto px-6">
 
                     <div className="bg-white shadow-lg rounded-xl p-6 text-center border hover:shadow-xl transition">
                         <div className="text-blue-900 text-4xl mb-3">⚡</div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 </div>
             </section>
          
-            <section className="mt-20 max-w-6xl mx-auto px-6">
+            <section className="mt-20 max-w-7xl mx-auto px-6">
 
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-10">
                     Our Mission & Vision

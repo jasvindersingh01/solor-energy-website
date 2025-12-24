@@ -52,11 +52,11 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.7 }}
           className="relative"
         >
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200">
+          <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
             <img
               src={whychoose}
               alt="Solar Building"
-              className="w-full h-[450px] object-cover"
+              className="w-full h-[500px] object-cover"
             />
           </div>
         </motion.div>

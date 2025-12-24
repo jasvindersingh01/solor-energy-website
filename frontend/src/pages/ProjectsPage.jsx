@@ -7,9 +7,15 @@ import g5 from "../assets/gallery/g5.jpg";
 import g6 from "../assets/gallery/g6.avif";
 import banner from "../assets/banners/banner2.jpg"
 
+import { useState } from "react";
+import { FaEye, FaTimes } from "react-icons/fa";
+
 const images = [g1, g2, g3, g4, g5, g6];
 
 export default function ProjectsPage() {
+
+  const [previewImg, setPreviewImg] = useState(null);
+
   return (
     <>
       <div className="w-full h-[25vh] md:h-[40vh] relative">
@@ -20,7 +26,7 @@ export default function ProjectsPage() {
         />
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute inset-0 flex items-center justify-start pl-20 pt-6">
+        <div className="absolute inset-0 flex items-center justify-center pt-6">
           <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
             Our Projects
           </h1>
@@ -31,7 +37,7 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl font-bold text-center text-blue-700 mb-12"
+          className="text-4xl font-bold text-center text-blue-700 mb-5"
         >
           All Solar Installations
         </motion.h2>
@@ -51,14 +57,57 @@ export default function ProjectsPage() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
             >
-              <img
-                src={img}
-                className="w-full h-52 md:h-72 object-cover hover:scale-110 transition duration-500"
-              />
+              <div className="relative group cursor-pointer">
+                {/* IMAGE */}
+                <img
+                  src={img}
+                  alt={`Project ${i + 1}`}
+                  className="w-full h-52 md:h-72 object-cover transition duration-500 group-hover:scale-110"
+                />
+
+                {/* OVERLAY */}
+                <div
+                  onClick={() => setPreviewImg(img)}
+                  className="absolute inset-0 bg-black/60 opacity-0 
+                 group-hover:opacity-100 transition
+                 flex items-center justify-center"
+                >
+                  <FaEye className="text-white text-4xl hover:scale-110 transition" />
+                </div>
+              </div>
             </motion.div>
+
           ))}
         </div>
       </section>
+      {previewImg && (
+        <div
+          className="fixed inset-0 bg-black/80 z-[999]
+               flex items-center justify-center px-4"
+          onClick={() => setPreviewImg(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* CLOSE ICON */}
+            <button
+              onClick={() => setPreviewImg(null)}
+              className="absolute -top-10 right-0 text-white text-2xl hover:scale-110 transition"
+            >
+              <FaTimes />
+            </button>
+
+            {/* PREVIEW IMAGE */}
+            <img
+              src={previewImg}
+              alt="Project Preview"
+              className="w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
+
     </>
   );
 }

@@ -37,15 +37,18 @@ export default function TopBar() {
               +91 9351055571
             </a>
 
-            ✉️
-            <a href="mailto:asters_energy@yahoo.com" className="hover:underline">
-              asters_energy@yahoo.com
-            </a>
+            
           </p>
         </div>
 
         {/* RIGHT SIDE SOCIAL ICONS */}
         <div className="flex items-center gap-4">
+            <a href="mailto:asters_energy@yahoo.com" className="hover:underline">
+             ✉️ asters_energy@yahoo.com
+            </a>
+            <p>
+              Follow us:
+            </p>
           <a
             href="https://facebook.com"
             target="_blank"
