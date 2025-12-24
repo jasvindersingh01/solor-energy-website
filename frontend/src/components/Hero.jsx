@@ -21,7 +21,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="relative z-10 text-center max-w-3xl px-4"
+        className="relative z-10 text-center max-w-4xl px-4"
       >
         <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight pt-24">
           Switch to{" "}
