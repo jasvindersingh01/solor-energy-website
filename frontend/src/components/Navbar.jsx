@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -10,23 +10,32 @@ export default function Navbar() {
   const [serviceOpen, setServiceOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hideTopbar, setHideTopbar] = useState(false);
+  const menuRef = useRef(null);
 
   const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Projects", path: "/projects" },
-  { label: "About Us", path: "/about" },
-  { label: "Contact", path: "/contact" },
-];
+    { label: "Home", path: "/" },
+    { label: "Projects", path: "/projects" },
+    { label: "About Us", path: "/about" },
+    { label: "Contact", path: "/contact" },
+  ];
 
-const services = [
-  { label: "On-Grid Solar", path: "/services/on-grid" },
-  { label: "Off-Grid Solar", path: "/services/off-grid" },
-  { label: "Hybrid Solar", path: "/services/hybrid" },
-  { label: "Solar Water Heater", path: "/services/water-heater" },
-  { label: "Solar Pump", path: "/services/pump" },
-  { label: "Solar Street Light", path: "/services/street-light" },
-];
+  const services = [
+    { label: "On-Grid Solar", path: "/services/on-grid" },
+    { label: "Off-Grid Solar", path: "/services/off-grid" },
+    { label: "Hybrid Solar", path: "/services/hybrid" },
+    { label: "Solar Water Heater", path: "/services/water-heater" },
+    { label: "Solar Pump", path: "/services/pump" },
+    { label: "Solar Street Light", path: "/services/street-light" },
+  ];
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +47,8 @@ const services = [
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+
 
   return (
     <motion.header
@@ -51,11 +62,8 @@ const services = [
     >
       <nav className="flex justify-between items-center px-6">
         {/* LOGO */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center pl-2">
           <img src={Logo} className="w-22 h-22 object-contain" />
-          <span className="text-xl font-bold text-blue-700">
-            Aster's Energy
-          </span>
         </div>
 
         {/* DESKTOP MENU */}
@@ -123,7 +131,7 @@ const services = [
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden bg-white shadow-md">
+        <div ref={menuRef} className="md:hidden bg-white shadow-md">
           <div className="flex flex-col gap-4 px-6 py-4 text-gray-700 font-medium">
             {navLinks.map((link) => (
               <Link
@@ -144,9 +152,8 @@ const services = [
               >
                 <span>Services</span>
                 <FaChevronDown
-                  className={`transition-transform duration-300 ${
-                    serviceOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-300 ${serviceOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
