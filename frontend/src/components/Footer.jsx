@@ -43,10 +43,10 @@ export default function Footer() {
           <p className="flex items-center gap-3 mt-2 text-gray-300">
             <FaEnvelope className="text-yellow-300" />
             <a
-              href="mailto:solarcompany@gmail.com"
+              href="mailto:asters_energy@gmail.com"
               className="hover:text-yellow-300"
             >
-              solarcompany@gmail.com
+              asters_energy@gmail.com
             </a>
           </p>
         </div>

@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import aboutImg from "../assets/aboutImg.jpg";
 import banner from "../assets/banners/banner2.jpg"
+import useSEO from "../hooks/useSEO";
 
 export default function AboutPage() {
+
+    useSEO({
+        title: "About Aster's Energy | Trusted Solar Company in Kota",
+        description:
+            "Aster's Energy is a trusted solar company in Kota providing quality rooftop solar installations, government subsidy support & long-term service."
+    });
+
     return (
         <> <div className="w-full h-[25vh] md:h-[40vh] relative">
             <img
@@ -57,7 +65,7 @@ export default function AboutPage() {
                             offering on-grid, off-grid and hybrid rooftop solar systems along with water heaters
                             and subsidy support. With certified engineers and years of installation experience,
                             we ensure reliable service, high-efficiency solar panels, smooth installation
-                            and long-term customer support. We proudly deal in leading brands such as 
+                            and long-term customer support. We proudly deal in leading brands such as
                             <strong> Waaree, Luminous, UTL, Adani, Vikram Solar</strong> and
                             <strong> Tata Power Solar</strong>, delivering durable and cost-effective solar
                             solutions for homes and businesses.
@@ -131,7 +139,7 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-         
+
             <section className="mt-20 max-w-7xl mx-auto px-6">
 
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-10">

@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import heater from "../../assets/services/heater.jpg";
 import banner from "../../assets/banners/banner2.jpg";
+import useSEO from "../../hooks/useSEO";
 
 export default function WaterHeater() {
+
+  useSEO({
+    title: "Solar Water Heater in Kota | Aster's Energy",
+    description:
+      "Energy-efficient solar water heaters for homes & businesses in Kota. Reduce electricity bills with eco-friendly water heating solutions."
+  });
+
   return (
     <>
       {/* HERO */}
@@ -49,7 +57,7 @@ export default function WaterHeater() {
 
         {/* IMAGE + TEXT */}
         <div className="grid md:grid-cols-2 gap-14 items-center">
-          
+
           {/* IMAGE */}
           <motion.img
             initial={{ opacity: 0, scale: 0.95 }}

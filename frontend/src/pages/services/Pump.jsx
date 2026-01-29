@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import pump from "../../assets/services/pump.png";
 import banner from "../../assets/banners/banner2.jpg";
+import useSEO from "../../hooks/useSEO";
 
 export default function Pump() {
+
+  useSEO({
+    title: "Solar Pump System in Kota | Agriculture Solar Pumps",
+    description:
+      "Solar submersible pumps for agriculture & borewells. Aster's Energy offers subsidy-supported solar pump solutions in Kota."
+  });
+
   return (
     <>
       {/* HERO */}
@@ -82,7 +90,7 @@ export default function Pump() {
 
         {/* IMAGE + DETAILS (REVERSED LAYOUT) */}
         <div className="grid md:grid-cols-2 gap-14 items-center">
-          
+
           {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

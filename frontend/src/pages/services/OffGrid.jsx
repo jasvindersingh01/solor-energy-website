@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import offgrid from "../../assets/services/offgrid.avif";
 import banner from "../../assets/banners/banner2.jpg";
+import useSEO from "../../hooks/useSEO";
 
 export default function OffGrid() {
+
+  useSEO({
+    title: "Off-Grid Solar System in Kota | Battery Based Solar",
+    description:
+      "Off-grid solar systems for areas without electricity. Aster's Energy provides reliable battery-based solar solutions in Kota, Rajasthan."
+  });
+
   return (
     <>
       {/* HERO */}
@@ -47,7 +55,7 @@ export default function OffGrid() {
 
         {/* IMAGE + FEATURES */}
         <div className="grid md:grid-cols-3 gap-10 mt-20 items-start">
-          
+
           {/* IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}

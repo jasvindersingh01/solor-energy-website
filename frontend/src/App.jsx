@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 
 //pages
 import Home from "./pages/Home";
-import ServicesPage from "./pages/ServicesPage";  
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -19,21 +18,21 @@ import Hybrid from "./pages/services/Hybrid";
 import WaterHeater from "./pages/services/WaterHeater";
 import Pump from "./pages/services/Pump";
 import StreetLight from "./pages/services/StreetLight";
+import FloatingCallButton from "./components/FloatingButtons";
 
 export default function App() {
   return (
     <>
       <ScrollToTop />
-    <div className="pt-[45px]">
-      <TopBar />
+      <div className="pt-[45px]">
+        <TopBar />
       </div>
       <div className="mt-10">
-  <Navbar />
-</div>
-      
+        <Navbar />
+      </div>
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<ServicesPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -47,6 +46,7 @@ export default function App() {
 
       </Routes>
 
+      <FloatingCallButton />
       <Footer />
     </>
   );

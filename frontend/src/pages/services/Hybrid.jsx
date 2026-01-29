@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import hybrid from "../../assets/services/hybrid.webp";
 import banner from "../../assets/banners/banner2.jpg";
+import useSEO from "../../hooks/useSEO";
 
 export default function Hybrid() {
+
+  useSEO({
+    title: "Hybrid Solar System in Kota | On-Grid + Battery Solar",
+    description:
+      "Hybrid solar systems combining grid & battery backup. Get uninterrupted power with Aster's Energy hybrid solar solutions in Kota."
+  });
+
   return (
     <>
       {/* HERO SECTION */}
@@ -49,7 +57,7 @@ export default function Hybrid() {
 
         {/* HOW IT WORKS (DIFFERENT LAYOUT) */}
         <div className="grid md:grid-cols-2 gap-16 mt-20 items-center">
-          
+
           {/* STEPS */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

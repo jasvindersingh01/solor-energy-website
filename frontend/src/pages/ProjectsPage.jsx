@@ -9,10 +9,18 @@ import banner from "../assets/banners/banner2.jpg"
 
 import { useState } from "react";
 import { FaEye, FaTimes } from "react-icons/fa";
+import useSEO from "../hooks/useSEO";
 
 const images = [g1, g2, g3, g4, g5, g6];
 
 export default function ProjectsPage() {
+
+  useSEO({
+  title: "Our Solar Projects in Kota | Aster's Energy",
+  description:
+    "Explore completed solar projects by Aster's Energy in Kota and nearby areas. Trusted rooftop solar installations for homes, businesses & industries."
+});
+
 
   const [previewImg, setPreviewImg] = useState(null);
 

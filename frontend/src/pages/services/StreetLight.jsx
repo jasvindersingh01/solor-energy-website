@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import street from "../../assets/services/street.jpg";
 import banner from "../../assets/banners/banner2.jpg";
+import useSEO from "../../hooks/useSEO";
 
 export default function StreetLight() {
+
+  useSEO({
+    title: "Solar Street Light Installation in Kota",
+    description:
+      "Automatic solar street lights for roads, societies & villages. Reliable dusk-to-dawn solar lighting solutions by Aster's Energy."
+  });
+
   return (
     <>
       {/* HERO */}
@@ -51,7 +59,7 @@ export default function StreetLight() {
 
         {/* IMAGE + FEATURES (LEFT IMAGE LAYOUT) */}
         <div className="grid md:grid-cols-2 gap-14 items-center mb-24">
-          
+
           {/* IMAGE */}
           <motion.img
             initial={{ opacity: 0, scale: 0.95 }}
@@ -108,7 +116,7 @@ export default function StreetLight() {
 
         {/* WHY SOLAR STREET LIGHT */}
         <div className="grid md:grid-cols-2 gap-14 items-center">
-          
+
           {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

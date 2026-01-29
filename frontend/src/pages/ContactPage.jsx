@@ -1,93 +1,42 @@
-  import { motion } from "framer-motion";
-  import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
-  import React, { useState } from "react";
-  import Swal from "sweetalert2";
-  import banner from "../assets/banners/banner2.jpg"
+import { motion } from "framer-motion";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import banner from "../assets/banners/banner2.jpg";
+import useSEO from "../hooks/useSEO";
 
-  export default function Contact() {
+export default function Contact() {
 
-    const [loading, setLoading] = useState(false);
+  useSEO({
+    title: "About Aster's Energy | Trusted Solar Company in Kota",
+    description:
+      "Aster's Energy is a trusted solar company in Kota providing quality rooftop solar installations, government subsidy support & long-term service."
+  });
 
-    const [formData, setFormData] = useState({
-      name: "",
-      phone: "",
-      email: "",
-      message: ""
-    });
+  return (
+    <>
+      <div className="w-full h-[30vh] md:h-[40vh] relative">
+        <img
+          src={banner}
+          alt="Solar Banner"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
 
-    const handleChange = (e) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
+            Contact Us
+          </h1>
+        </div>
+      </div>
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+      {/* CONTACT SECTION */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
 
-      setLoading(true);
-
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          Swal.fire({
-            title: "Message Sent!",
-            icon: "success",
-            text: "We will contact you soon.",
-            draggable: true
-          });
-
-          setFormData({ name: "", phone: "", email: "", message: "" });
-        } else {
-          alert("Something went wrong!");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      } finally {
-    setLoading(false);
-  }
-    };
-
-
-    return (
-      <><div className="w-full h-[25vh] md:h-[40vh] relative">
-                  <img
-                      src={banner}
-                      alt="Solar Banner"
-                      className="w-full h-full object-cover object-center opacity-90"
-                  />
-                  <div className="absolute inset-0 bg-black/40"></div>
-      
-                  <div className="absolute inset-0 flex items-center justify-center pt-6">
-                      <h1 className="text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
-                          Contact Us
-                      </h1>
-                  </div>
-              </div>
-      <section id="contact" className="py-20 bg-white scroll-mt-14">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl font-bold text-center mb-12 text-blue-700"
-        >
-          Contact Us
-        </motion.h2>
-
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-start">
-
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -95,112 +44,100 @@
             transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Get In Touch With Us
-            </h3>
+            <span className="inline-block border-l-4 border-blue-700 pl-3 text-blue-700 font-semibold">
+              Let’s Talk
+            </span>
 
-            <div className="flex items-start gap-4">
-              <FaPhoneAlt size={25} className="text-blue-600 mt-1" />
-              <div>
-                <h4 className="text-lg font-semibold">Phone</h4>
-                <p className="text-gray-700">+91 9351055571</p>
-              </div>
-            </div>
+            <h2 className="text-4xl font-bold text-yellow-500 leading-snug">
+              Let’s Power Up Your Next Solar Project Together
+            </h2>
 
-            <div className="flex items-start gap-4">
-              <FaMapMarkerAlt size={25} className="text-red-600 mt-1" />
-              <div>
-                <h4 className="text-lg font-semibold">Address</h4>
-                <p className="text-gray-700">
-                  Plot No. 1, Adinath Nagar, Devli Arab Road, Kota, Rajasthan
-                </p>
-              </div>
-            </div>
+            <p className="text-gray-700 leading-relaxed">
+              Get in touch with <strong>Aster's Energy</strong> to explore
+              reliable, cost-effective solar solutions for your home or business.
+              Our experts guide you from consultation to installation — every
+              step of the way.
+            </p>
 
-            <div className="flex items-start gap-4">
-              <FaEnvelope size={25} className="text-yellow-500 mt-1" />
-              <div>
-                <h4 className="text-lg font-semibold">Email</h4>
-                <p className="text-gray-700">asters_energy@yahoo.com</p>
-              </div>
-            </div>
-
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
-              <p className="text-gray-800">
-                <strong>Govt Subsidy Assistance:</strong> Get support in claiming
-                rooftop solar subsidies up to ₹78,000.
-              </p>
+            <div className="bg-blue-50 border-l-4 border-blue-700 p-5 rounded-lg space-y-2">
+              <p>☀ Save up to <strong>₹78,000</strong> with Govt. Subsidy</p>
+              <p>⚡ Generate your own electricity & reduce bills</p>
+              <p>🔋 Sell excess power back to the grid</p>
             </div>
           </motion.div>
 
-          <motion.form
-            onSubmit={handleSubmit}
+          {/* RIGHT SIDE */}
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="bg-gray-100 p-8 rounded-xl shadow-md space-y-5"
+            className="space-y-6"
           >
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
-            />
+            <h3 className="text-3xl font-bold text-blue-800">
+              Get In Touch!
+            </h3>
 
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
-            />
+            <div className="space-y-5 text-gray-800">
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
-            />
-
-            <textarea
-              name="message"
-              rows="4"
-              placeholder="How can we help you?"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border focus:outline-blue-600"
-            ></textarea>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className={`w-full py-3 rounded-lg font-semibold text-white transition cursor-pointer
-      ${loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}
-    `}
-            >
-              {loading ? (
-                <div className="flex items-center justify-center gap-2">
-                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                  Sending...
+              <div className="flex gap-4 items-start">
+                <FaMapMarkerAlt className="text-blue-700 text-xl mt-1" />
+                <div>
+                  <p className="font-semibold">Registered Address</p>
+                  <p>
+                    Plot No. 1, Adinath Nagar, Devli Arab Road, Kota (Raj.)
+                  </p>
                 </div>
-              ) : (
-                "Send Message"
-              )}
-            </button>
+              </div>
 
-          </motion.form>
+              <div className="flex gap-4 items-start">
+                <FaEnvelope className="text-yellow-500 text-xl mt-1" />
+                <div>
+                  <p className="font-semibold">Email</p>
+                  <p>asters_energy@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <FaPhoneAlt className="text-green-600 text-xl mt-1" />
+                <div>
+                  <p className="font-semibold">Call Us</p>
+                  <p>+91 93510 55571</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="flex gap-4 mt-6">
+              <a
+                href="tel:9351055571"
+                className="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition"
+              >
+                Call Now
+              </a>
+
+              <a
+                href="https://wa.me/919351055571"
+                target="_blank"
+                className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </motion.div>
+
         </div>
       </section>
-      </>
-    );
-  }
+
+      {/* MAP SECTION */}
+      <section className="w-full h-[450px] mt-10">
+        <iframe
+          title="Google Map"
+          src="https://www.google.com/maps?q=Kota%20Rajasthan&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+        ></iframe>
+      </section>
+    </>
+  );
+}

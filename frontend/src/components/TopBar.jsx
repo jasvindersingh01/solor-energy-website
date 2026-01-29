@@ -37,24 +37,20 @@ export default function TopBar() {
               +91 9351055571
             </a>
 
-            
           </p>
         </div>
 
         {/* RIGHT SIDE SOCIAL ICONS */}
-        <div className="flex items-center gap-4">
-            <a href="mailto:asters_energy@yahoo.com" className="hover:underline">
-             ✉️ asters_energy@yahoo.com
+        <div className="flex items-center gap-4 mr-5">
+            <a href="mailto:asters_energy@gmail.com" className="hover:underline">
+             ✉️ asters_energy@gmail.com
             </a>
-            <p>
-              Follow us:
-            </p>
           <a
             href="https://facebook.com"
             target="_blank"
             className="hover:text-yellow-300 transition text-lg"
           >
-            <FaFacebookF />
+            <FaFacebookF size={20} />
           </a>
 
           <a
@@ -62,7 +58,7 @@ export default function TopBar() {
             target="_blank"
             className="hover:text-yellow-300 transition text-lg"
           >
-            <FaInstagram />
+            <FaInstagram size={20} />
           </a>
 
           <a
@@ -70,7 +66,7 @@ export default function TopBar() {
             target="_blank"
             className="hover:text-red-400 transition text-lg"
           >
-            <FaYoutube />
+            <FaYoutube size={20} />
           </a>
         </div>
 
